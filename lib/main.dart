@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:frist_flutter_app/basic/basic_widget.dart';
+import 'package:frist_flutter_app/basic/basic_widget_button.dart';
+import 'package:frist_flutter_app/basic/basic_widget_image.dart';
+import 'package:frist_flutter_app/basic/basic_widget_switch_checkbox.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -122,16 +126,42 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             RandomWordWidget(),
+            //文本，文字样式
             FlatButton(
               child: Text("Text Style"),
               textColor: Colors.red,
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return TextSytle2();
                 }));
-
               },
-            )
+            ),
+            //按钮
+            RaisedButton(
+              child: Text("按钮"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return ButtonWidget();
+                }));
+              },
+            ),
+            //图片及ICON
+            FlatButton(
+              child: Text("图片及ICON"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return ImageDemo();
+                }));
+              },
+            ),
+            FlatButton(
+              child: Text("单选框和复选框"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return SwitchAndCheckBoxTestRoute();
+                }));
+              },
+            ),
           ],
         ),
       ),
@@ -144,7 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class RandomWordWidget extends StatelessWidget{
+class RandomWordWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pairWord = WordPair.random();
@@ -154,6 +184,7 @@ class RandomWordWidget extends StatelessWidget{
     );
   }
 }
+
 class NewRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -170,7 +201,9 @@ class NewRoute extends StatelessWidget {
 
 class EchoRoute extends StatelessWidget {
   EchoRoute(this.tip);
+
   final String tip;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
