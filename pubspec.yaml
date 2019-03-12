@@ -47,6 +47,9 @@ flutter:
   - lib/basic/basic_widget_button.dart
   - lib/basic/basic_widget_image.dart
   - lib/basic/basic_widget_switch_checkbox.dart
+  - lib/basic/basic_widget_input_box_form.dart
+  - lib/layout/
+  - lib/container/
   - assets/images/
   - assets/fonts/
   #  - images/a_dot_burr.jpeg

@@ -3,7 +3,14 @@ import 'package:english_words/english_words.dart';
 import 'package:frist_flutter_app/basic/basic_widget.dart';
 import 'package:frist_flutter_app/basic/basic_widget_button.dart';
 import 'package:frist_flutter_app/basic/basic_widget_image.dart';
+import 'package:frist_flutter_app/basic/basic_widget_input_box_form.dart';
 import 'package:frist_flutter_app/basic/basic_widget_switch_checkbox.dart';
+import 'package:frist_flutter_app/container/container_widget_constrainedbox.dart';
+import 'package:frist_flutter_app/container/container_widget_padding.dart';
+import 'package:frist_flutter_app/layout/layout_widget_flex.dart';
+import 'package:frist_flutter_app/layout/layout_widget_row_column.dart';
+import 'package:frist_flutter_app/layout/layout_widget_stack.dart';
+import 'package:frist_flutter_app/layout/layout_widget_wrap_flow.dart';
 
 void main() => runApp(MyApp());
 
@@ -101,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
@@ -162,6 +169,77 @@ class _MyHomePageState extends State<MyHomePage> {
                 }));
               },
             ),
+
+            //输入框和表单
+            FlatButton(
+              child: Text("输入框和表单"),
+              textColor: Colors.red,
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return InputBoxAndForm();
+                }));
+              },
+            ),
+
+            //布局类 row column
+            FlatButton(
+              child: Text("布局类Row,Column"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return LayoutRowColumn();
+                }));
+              },
+            ),
+
+            //弹性布局 flex
+            FlatButton(
+              child: Text("弹性布局Flex"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return FlexDemo();
+                }));
+              },
+            ),
+            //流式布局 wrap flow
+            FlatButton(
+              child: Text("流式布局Wrap , Flow"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return WrapFlowDemo();
+                }));
+              },
+            ),
+
+            //Stack 和绝对布局
+            FlatButton(
+              child: Text("Stack 和绝对布局"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return StackDemo();
+                }));
+              },
+            ),
+            
+            //padding
+            FlatButton(
+              child: Text("容器类widget Padding"),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return PaddingTestRoute();
+                }));
+              },
+            ),
+
+            //ConstrainedBox和SizedBox
+            FlatButton(
+              child: Text("布局限制类容器ConstrainedBox和SizedBox"),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return ConstrainedBoxDemo();
+                }));
+              },
+            ),
+
           ],
         ),
       ),
