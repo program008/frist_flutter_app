@@ -6,7 +6,11 @@ import 'package:frist_flutter_app/basic/basic_widget_image.dart';
 import 'package:frist_flutter_app/basic/basic_widget_input_box_form.dart';
 import 'package:frist_flutter_app/basic/basic_widget_switch_checkbox.dart';
 import 'package:frist_flutter_app/container/container_widget_constrainedbox.dart';
+import 'package:frist_flutter_app/container/container_widget_container.dart';
+import 'package:frist_flutter_app/container/container_widget_decoratedbox.dart';
 import 'package:frist_flutter_app/container/container_widget_padding.dart';
+import 'package:frist_flutter_app/container/container_widget_scaffold.dart';
+import 'package:frist_flutter_app/container/container_widget_transform.dart';
 import 'package:frist_flutter_app/layout/layout_widget_flex.dart';
 import 'package:frist_flutter_app/layout/layout_widget_row_column.dart';
 import 'package:frist_flutter_app/layout/layout_widget_stack.dart';
@@ -236,6 +240,45 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context){
                   return ConstrainedBoxDemo();
+                }));
+              },
+            ),
+            //装饰容器类DecoratedBox
+            FlatButton(
+              child: Text("装饰容器类DecoratedBox"),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return DecoratedBoxDemo();
+                }));
+              },
+            ),
+
+            //Transform变换
+            FlatButton(
+              child: Text("Transform变换"),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return TransformDemo();
+                }));
+              },
+            ),
+
+            //Container
+            FlatButton(
+              child: Text("Container"),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return ContainerDemo();
+                }));
+              },
+            ),
+
+            //Scaffold
+            FlatButton(
+              child: Text("Scaffold"),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return ScaffoldRoute();
                 }));
               },
             ),

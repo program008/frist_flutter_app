@@ -60,6 +60,9 @@ class WrapFlowDemo extends StatelessWidget {
           new Chip(
             //avatar: new CircleAvatar(backgroundColor: Colors.blue, child: Text('J')),
             label: new Text('Laurens'),
+            onDeleted: (){
+              print('Laurens');
+            },
           ),
 
           Flow(
