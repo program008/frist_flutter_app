@@ -50,9 +50,9 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
             controller: _tabController,
             tabs: tabs.map((e) => Tab(text: e)).toList()),
       ),
-      drawer: new MyDrawer(),
       //抽屉
-      bottomNavigationBar: BottomNavigationBar(
+      drawer: new MyDrawer(),
+      /*bottomNavigationBar: BottomNavigationBar(
         // 底部导航
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
@@ -64,8 +64,20 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
         currentIndex: _selectedIndex,
         fixedColor: Colors.blue,
         onTap: _onItemTapped,
-      ),
+      ),*/
 
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        shape: CircularNotchedRectangle(), // 底部导航栏打一个圆形的洞
+        child: Row(
+          children: [
+            IconButton(icon: Icon(Icons.home)),
+            SizedBox(), //中间位置空出
+            IconButton(icon: Icon(Icons.business)),
+          ],
+          mainAxisAlignment: MainAxisAlignment.spaceAround, //均分底部导航栏横向空间
+        ),
+      ),
       body: TabBarView(
         controller: _tabController,
         children: tabs.map((e) {
@@ -76,10 +88,13 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
           );
         }).toList(),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
           //悬浮按钮
           child: Icon(Icons.add),
           onPressed: _onAdd),
+
+
     );
   }
 
