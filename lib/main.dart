@@ -15,6 +15,14 @@ import 'package:frist_flutter_app/layout/layout_widget_flex.dart';
 import 'package:frist_flutter_app/layout/layout_widget_row_column.dart';
 import 'package:frist_flutter_app/layout/layout_widget_stack.dart';
 import 'package:frist_flutter_app/layout/layout_widget_wrap_flow.dart';
+import 'package:frist_flutter_app/scroll/scroll_widget_custom_scroll.dart';
+import 'package:frist_flutter_app/scroll/scroll_widget_gridview1.dart';
+import 'package:frist_flutter_app/scroll/scroll_widget_gridview2.dart';
+import 'package:frist_flutter_app/scroll/scroll_widget_gridview3.dart';
+import 'package:frist_flutter_app/scroll/scroll_widget_listview.dart';
+import 'package:frist_flutter_app/scroll/scroll_widget_listview2.dart';
+import 'package:frist_flutter_app/scroll/scroll_widget_listview3.dart';
+import 'package:frist_flutter_app/scroll/scroll_widget_single_child_scroll_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -94,196 +102,304 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-            FlatButton(
-              child: Text("open a new route"),
-              textColor: Colors.blue,
-              onPressed: () {
-                //Navigator.pushNamed(context, "new_page");
-                //Navigator.pushNamed(context, "new_page2");
+      body: Scrollbar(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(16.0),
+          child: Center(
+            // Center is a layout widget. It takes a single child and positions it
+            // in the middle of the parent.
+            child: Column(
+              // Column is also layout widget. It takes a list of children and
+              // arranges them vertically. By default, it sizes itself to fit its
+              // children horizontally, and tries to be as tall as its parent.
+              //
+              // Invoke "debug painting" (press "p" in the console, choose the
+              // "Toggle Debug Paint" action from the Flutter Inspector in Android
+              // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+              // to see the wireframe for each widget.
+              //
+              // Column has various properties to control how it sizes itself and
+              // how it positions its children. Here we use mainAxisAlignment to
+              // center the children vertically; the main axis here is the vertical
+              // axis because Columns are vertical (the cross axis would be
+              // horizontal).
+              //mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'You have pushed the button this many times:',
+                ),
+                Text(
+                  '$_counter',
+                  style: Theme.of(context).textTheme.display1,
+                ),
+                FlatButton(
+                  child: Text("open a new route"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    //Navigator.pushNamed(context, "new_page");
+                    //Navigator.pushNamed(context, "new_page2");
 //                Navigator.push(context, MaterialPageRoute(builder: (context) {
 //                  return NewRoute();
 //                }));
 
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return EchoRoute("上一个界面点击 $_counter 次");
-                }));
-              },
-            ),
-            RandomWordWidget(),
-            //文本，文字样式
-            FlatButton(
-              child: Text("Text Style"),
-              textColor: Colors.red,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return TextSytle2();
-                }));
-              },
-            ),
-            //按钮
-            RaisedButton(
-              child: Text("按钮"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return ButtonWidget();
-                }));
-              },
-            ),
-            //图片及ICON
-            FlatButton(
-              child: Text("图片及ICON"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return ImageDemo();
-                }));
-              },
-            ),
-            FlatButton(
-              child: Text("单选框和复选框"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return SwitchAndCheckBoxTestRoute();
-                }));
-              },
-            ),
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return EchoRoute("上一个界面点击 $_counter 次");
+                    }));
+                  },
+                ),
+                RandomWordWidget(),
+                //文本，文字样式
+                FlatButton(
+                  child: Text("Text Style"),
+                  textColor: Colors.red,
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return TextSytle2();
+                    }));
+                  },
+                ),
+                //按钮
+                RaisedButton(
+                  child: Text("按钮"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ButtonWidget();
+                    }));
+                  },
+                ),
+                //图片及ICON
+                FlatButton(
+                  child: Text("图片及ICON"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ImageDemo();
+                    }));
+                  },
+                ),
+                FlatButton(
+                  child: Text("单选框和复选框"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return SwitchAndCheckBoxTestRoute();
+                    }));
+                  },
+                ),
 
-            //输入框和表单
-            FlatButton(
-              child: Text("输入框和表单"),
-              textColor: Colors.red,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return InputBoxAndForm();
-                }));
-              },
-            ),
+                //输入框和表单
+                FlatButton(
+                  child: Text("输入框和表单"),
+                  textColor: Colors.red,
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return InputBoxAndForm();
+                    }));
+                  },
+                ),
 
-            //布局类 row column
-            FlatButton(
-              child: Text("布局类Row,Column"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return LayoutRowColumn();
-                }));
-              },
-            ),
+                //布局类 row column
+                FlatButton(
+                  child: Text("布局类Row,Column"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return LayoutRowColumn();
+                    }));
+                  },
+                ),
 
-            //弹性布局 flex
-            FlatButton(
-              child: Text("弹性布局Flex"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return FlexDemo();
-                }));
-              },
-            ),
-            //流式布局 wrap flow
-            FlatButton(
-              child: Text("流式布局Wrap , Flow"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return WrapFlowDemo();
-                }));
-              },
-            ),
+                //弹性布局 flex
+                FlatButton(
+                  child: Text("弹性布局Flex"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return FlexDemo();
+                    }));
+                  },
+                ),
+                //流式布局 wrap flow
+                FlatButton(
+                  child: Text("流式布局Wrap , Flow"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return WrapFlowDemo();
+                    }));
+                  },
+                ),
 
-            //Stack 和绝对布局
-            FlatButton(
-              child: Text("Stack 和绝对布局"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return StackDemo();
-                }));
-              },
-            ),
-            
-            //padding
-            FlatButton(
-              child: Text("容器类widget Padding"),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return PaddingTestRoute();
-                }));
-              },
-            ),
+                //Stack 和绝对布局
+                FlatButton(
+                  child: Text("Stack 和绝对布局"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return StackDemo();
+                    }));
+                  },
+                ),
 
-            //ConstrainedBox和SizedBox
-            FlatButton(
-              child: Text("布局限制类容器ConstrainedBox和SizedBox"),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return ConstrainedBoxDemo();
-                }));
-              },
-            ),
-            //装饰容器类DecoratedBox
-            FlatButton(
-              child: Text("装饰容器类DecoratedBox"),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return DecoratedBoxDemo();
-                }));
-              },
-            ),
+                //padding
+                FlatButton(
+                  child: Text("容器类widget Padding"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return PaddingTestRoute();
+                    }));
+                  },
+                ),
 
-            //Transform变换
-            FlatButton(
-              child: Text("Transform变换"),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return TransformDemo();
-                }));
-              },
-            ),
+                //ConstrainedBox和SizedBox
+                FlatButton(
+                  child: Text("布局限制类容器ConstrainedBox和SizedBox"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ConstrainedBoxDemo();
+                    }));
+                  },
+                ),
+                //装饰容器类DecoratedBox
+                FlatButton(
+                  child: Text("装饰容器类DecoratedBox"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return DecoratedBoxDemo();
+                    }));
+                  },
+                ),
 
-            //Container
-            FlatButton(
-              child: Text("Container"),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return ContainerDemo();
-                }));
-              },
-            ),
+                //Transform变换
+                FlatButton(
+                  child: Text("Transform变换"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return TransformDemo();
+                    }));
+                  },
+                ),
 
-            //Scaffold
-            FlatButton(
-              child: Text("Scaffold"),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return ScaffoldRoute();
-                }));
-              },
-            ),
+                //Container
+                FlatButton(
+                  child: Text("Container"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ContainerDemo();
+                    }));
+                  },
+                ),
 
-          ],
+                //Scaffold
+                FlatButton(
+                  child: Text("Scaffold"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ScaffoldRoute();
+                    }));
+                  },
+                ),
+
+                //SingleChildScrollViewTestRoute
+                FlatButton(
+                  child: Text("SingleChildScrollView"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return SingleChildScrollViewTestRoute();
+                    }));
+                  },
+                ),
+
+                //ListViewTestRoute
+                FlatButton(
+                  child: Text("ListViewTestRoute"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ListViewTestRoute();
+                    }));
+                  },
+                ),
+                //InfiniteListView
+                FlatButton(
+                  child: Text("InfiniteListView"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return InfiniteListView();
+                    }));
+                  },
+                ),
+
+                //添加固定表头
+                FlatButton(
+                  child: Text("添加固定表头"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ListViewRoute3();
+                    }));
+                  },
+                ),
+
+                //纵轴固定数量的gridview
+                FlatButton(
+                  child: Text("纵轴固定数量的gridview"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return GridViewRoute1();
+                    }));
+                  },
+                ),
+
+                //纵轴子元素为固定长度的gridview
+                FlatButton(
+                  child: Text("纵轴子元素为固定长度的gridview"),
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) {
+                      return GridViewRoute2();
+                    }));
+                  },
+                ),
+                //gridview
+                FlatButton(
+                  child: Text("纵轴固定数量的gridview2"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return GridViewRoute3();
+                    }));
+                  },
+                ),
+
+                //CustomScrollView
+                FlatButton(
+                  child: Text("CustomScrollView"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return CustomScrollViewTestRoute();
+                    }));
+                  },
+                ),
+
+
+              ],
+            ),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
