@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter/material.dart';
 import 'package:frist_flutter_app/basic/basic_widget.dart';
 import 'package:frist_flutter_app/basic/basic_widget_button.dart';
 import 'package:frist_flutter_app/basic/basic_widget_image.dart';
@@ -18,6 +18,15 @@ import 'package:frist_flutter_app/layout/layout_widget_flex.dart';
 import 'package:frist_flutter_app/layout/layout_widget_row_column.dart';
 import 'package:frist_flutter_app/layout/layout_widget_stack.dart';
 import 'package:frist_flutter_app/layout/layout_widget_wrap_flow.dart';
+import 'package:frist_flutter_app/listener/listener_eventbus_page_a.dart';
+import 'package:frist_flutter_app/listener/listener_gesture__recognizer.dart';
+import 'package:frist_flutter_app/listener/listener_gesture_conflict.dart';
+import 'package:frist_flutter_app/listener/listener_gesture_content.dart';
+import 'package:frist_flutter_app/listener/listener_gesture_detector.dart';
+import 'package:frist_flutter_app/listener/listener_gesture_drag.dart';
+import 'package:frist_flutter_app/listener/listener_gesture_drag_vertical.dart';
+import 'package:frist_flutter_app/listener/listener_geture_scale.dart';
+import 'package:frist_flutter_app/listener/listener_pointer_event.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_controller.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_controller2.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_custom_scroll.dart';
@@ -28,6 +37,7 @@ import 'package:frist_flutter_app/scroll/scroll_widget_listview.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_listview2.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_listview3.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_single_child_scroll_view.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -458,6 +468,105 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
 
+                //Pointer 事件处理
+                FlatButton(
+                  child: Text("Pointer事件处理"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return PointerEventRoute();
+                        }));
+                  },
+                ),
+
+                //手势检测
+                FlatButton(
+                  child: Text("手势检测(点击，双击，长按)"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return GestureDetectorTestRoute();
+                        }));
+                  },
+                ),
+
+
+                //_Drag 事件处理
+                FlatButton(
+                  child: Text("拖动(任意方向)"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return DragRoute();
+                        }));
+                  },
+                ),
+
+                //_Drag 事件处理
+                FlatButton(
+                  child: Text("拖动(单一方向)"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return DragVerticalRoute();
+                        }));
+                  },
+                ),
+
+                //缩放 事件处理
+                FlatButton(
+                  child: Text("缩放"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return ScaleTestRoute();
+                        }));
+                  },
+                ),
+
+                //GestureRecognizerTestRoute
+                FlatButton(
+                  child: Text("GestureRecognizerTestRoute"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return GestureRecognizerTestRoute();
+                        }));
+                  },
+                ),
+
+                //手势竞争
+                FlatButton(
+                  child: Text("手势竞争"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return BothDirectionTestRoute();
+                        }));
+                  },
+                ),
+
+                //手势冲突
+                FlatButton(
+                  child: Text("手势冲突"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return GestureConflictTestRoute();
+                        }));
+                  },
+                ),
+
+                //事件总线 A界面
+                FlatButton(
+                  child: Text("事件总线 A界面"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return PageA();
+                        }));
+                  },
+                ),
 
               ],
             ),
