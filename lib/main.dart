@@ -11,10 +11,15 @@ import 'package:frist_flutter_app/container/container_widget_decoratedbox.dart';
 import 'package:frist_flutter_app/container/container_widget_padding.dart';
 import 'package:frist_flutter_app/container/container_widget_scaffold.dart';
 import 'package:frist_flutter_app/container/container_widget_transform.dart';
+import 'package:frist_flutter_app/function/function_widget_inherited_widget.dart';
+import 'package:frist_flutter_app/function/function_widget_theme.dart';
+import 'package:frist_flutter_app/function/function_widget_willpopscope.dart';
 import 'package:frist_flutter_app/layout/layout_widget_flex.dart';
 import 'package:frist_flutter_app/layout/layout_widget_row_column.dart';
 import 'package:frist_flutter_app/layout/layout_widget_stack.dart';
 import 'package:frist_flutter_app/layout/layout_widget_wrap_flow.dart';
+import 'package:frist_flutter_app/scroll/scroll_widget_controller.dart';
+import 'package:frist_flutter_app/scroll/scroll_widget_controller2.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_custom_scroll.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_gridview1.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_gridview2.dart';
@@ -393,6 +398,63 @@ class _MyHomePageState extends State<MyHomePage> {
                         MaterialPageRoute(builder: (context) {
                       return CustomScrollViewTestRoute();
                     }));
+                  },
+                ),
+
+
+                //ScrollControllerTestRoute
+                FlatButton(
+                  child: Text("滚动控制"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return ScrollControllerTestRoute();
+                        }));
+                  },
+                ),
+
+                //ScrollNotificationTestRoute
+                FlatButton(
+                  child: Text("ScrollNotificationTestRoute"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return ScrollNotificationTestRoute();
+                        }));
+                  },
+                ),
+
+                //WillPopScopeTestRoute
+                FlatButton(
+                  child: Text("WillPopScopeTestRoute"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return WillPopScopeTestRoute();
+                        }));
+                  },
+                ),
+
+
+                //InheritedWidgetTestRoute
+                FlatButton(
+                  child: Text("InheritedWidgetTestRoute"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return InheritedWidgetTestRoute();
+                        }));
+                  },
+                ),
+
+                //ThemeTestRoute
+                FlatButton(
+                  child: Text("ThemeTestRoute"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return ThemeTestRoute();
+                        }));
                   },
                 ),
 
