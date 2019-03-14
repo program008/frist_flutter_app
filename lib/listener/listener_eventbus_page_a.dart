@@ -9,7 +9,7 @@ class PageA extends StatefulWidget {
 }
 
 class _PageAState extends State<PageA> {
-  EventBus bus = EventBus();
+  //EventBus bus = EventBus();
   String title = "hello world";
 
   @override

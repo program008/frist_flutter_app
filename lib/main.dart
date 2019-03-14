@@ -14,6 +14,9 @@ import 'package:frist_flutter_app/container/container_widget_transform.dart';
 import 'package:frist_flutter_app/function/function_widget_inherited_widget.dart';
 import 'package:frist_flutter_app/function/function_widget_theme.dart';
 import 'package:frist_flutter_app/function/function_widget_willpopscope.dart';
+import 'package:frist_flutter_app/io/file_operation.dart';
+import 'package:frist_flutter_app/io/http_operation.dart';
+import 'package:frist_flutter_app/io/web_socket.dart';
 import 'package:frist_flutter_app/layout/layout_widget_flex.dart';
 import 'package:frist_flutter_app/layout/layout_widget_row_column.dart';
 import 'package:frist_flutter_app/layout/layout_widget_stack.dart';
@@ -567,6 +570,42 @@ class _MyHomePageState extends State<MyHomePage> {
                         }));
                   },
                 ),
+
+                //文件操作
+                FlatButton(
+                  child: Text("文件操作"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return FileOperationRoute();
+                        }));
+                  },
+                ),
+
+                //http请求
+                FlatButton(
+                  child: Text("http请求"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return HttpTestRoute();
+                        }));
+                  },
+                ),
+
+
+                //WebSocketRoute
+                FlatButton(
+                  child: Text("WebSocketRoute"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return WebSocketRoute();
+                        }));
+                  },
+                ),
+
+
 
               ],
             ),
