@@ -11,6 +11,11 @@ import 'package:frist_flutter_app/container/container_widget_decoratedbox.dart';
 import 'package:frist_flutter_app/container/container_widget_padding.dart';
 import 'package:frist_flutter_app/container/container_widget_scaffold.dart';
 import 'package:frist_flutter_app/container/container_widget_transform.dart';
+import 'package:frist_flutter_app/demo/animated_list.dart';
+import 'package:frist_flutter_app/demo/app_bar_bottom.dart';
+import 'package:frist_flutter_app/demo/basic_app_bar.dart';
+import 'package:frist_flutter_app/demo/expansion_tile_sample.dart';
+import 'package:frist_flutter_app/demo/tabbed_app_bar.dart';
 import 'package:frist_flutter_app/function/function_widget_inherited_widget.dart';
 import 'package:frist_flutter_app/function/function_widget_theme.dart';
 import 'package:frist_flutter_app/function/function_widget_willpopscope.dart';
@@ -40,7 +45,6 @@ import 'package:frist_flutter_app/scroll/scroll_widget_listview.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_listview2.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_listview3.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_single_child_scroll_view.dart';
-
 
 void main() => runApp(MyApp());
 
@@ -386,8 +390,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 FlatButton(
                   child: Text("纵轴子元素为固定长度的gridview"),
                   onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (context) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
                       return GridViewRoute2();
                     }));
                   },
@@ -414,15 +418,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
 
-
                 //ScrollControllerTestRoute
                 FlatButton(
                   child: Text("滚动控制"),
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return ScrollControllerTestRoute();
-                        }));
+                      return ScrollControllerTestRoute();
+                    }));
                   },
                 ),
 
@@ -432,8 +435,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return ScrollNotificationTestRoute();
-                        }));
+                      return ScrollNotificationTestRoute();
+                    }));
                   },
                 ),
 
@@ -443,11 +446,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return WillPopScopeTestRoute();
-                        }));
+                      return WillPopScopeTestRoute();
+                    }));
                   },
                 ),
-
 
                 //InheritedWidgetTestRoute
                 FlatButton(
@@ -455,8 +457,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return InheritedWidgetTestRoute();
-                        }));
+                      return InheritedWidgetTestRoute();
+                    }));
                   },
                 ),
 
@@ -466,8 +468,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return ThemeTestRoute();
-                        }));
+                      return ThemeTestRoute();
+                    }));
                   },
                 ),
 
@@ -477,8 +479,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return PointerEventRoute();
-                        }));
+                      return PointerEventRoute();
+                    }));
                   },
                 ),
 
@@ -488,11 +490,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return GestureDetectorTestRoute();
-                        }));
+                      return GestureDetectorTestRoute();
+                    }));
                   },
                 ),
-
 
                 //_Drag 事件处理
                 FlatButton(
@@ -500,8 +501,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return DragRoute();
-                        }));
+                      return DragRoute();
+                    }));
                   },
                 ),
 
@@ -511,8 +512,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return DragVerticalRoute();
-                        }));
+                      return DragVerticalRoute();
+                    }));
                   },
                 ),
 
@@ -522,8 +523,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return ScaleTestRoute();
-                        }));
+                      return ScaleTestRoute();
+                    }));
                   },
                 ),
 
@@ -533,8 +534,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return GestureRecognizerTestRoute();
-                        }));
+                      return GestureRecognizerTestRoute();
+                    }));
                   },
                 ),
 
@@ -544,8 +545,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return BothDirectionTestRoute();
-                        }));
+                      return BothDirectionTestRoute();
+                    }));
                   },
                 ),
 
@@ -555,8 +556,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return GestureConflictTestRoute();
-                        }));
+                      return GestureConflictTestRoute();
+                    }));
                   },
                 ),
 
@@ -566,8 +567,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return PageA();
-                        }));
+                      return PageA();
+                    }));
                   },
                 ),
 
@@ -577,8 +578,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return FileOperationRoute();
-                        }));
+                      return FileOperationRoute();
+                    }));
                   },
                 ),
 
@@ -588,11 +589,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return HttpTestRoute();
-                        }));
+                      return HttpTestRoute();
+                    }));
                   },
                 ),
-
 
                 //WebSocketRoute
                 FlatButton(
@@ -600,13 +600,57 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return WebSocketRoute();
-                        }));
+                      return WebSocketRoute();
+                    }));
                   },
                 ),
 
+                FlatButton(
+                  child: Text("demo1"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return AnimatedListSample();
+                    }));
+                  },
+                ),
 
-
+                FlatButton(
+                  child: Text("demo2"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return AppBarBottomSample();
+                    }));
+                  },
+                ),
+                FlatButton(
+                  child: Text("demo3"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return BasicAppBarSample();
+                    }));
+                  },
+                ),
+                FlatButton(
+                  child: Text("demo4"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ExpansionTileSample();
+                    }));
+                  },
+                ),
+                FlatButton(
+                  child: Text("demo5"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return TabbedAppBarSample();
+                    }));
+                  },
+                ),
               ],
             ),
           ),
