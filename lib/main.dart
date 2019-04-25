@@ -22,6 +22,7 @@ import 'package:frist_flutter_app/function/function_widget_willpopscope.dart';
 import 'package:frist_flutter_app/io/file_operation.dart';
 import 'package:frist_flutter_app/io/http_operation.dart';
 import 'package:frist_flutter_app/io/web_socket.dart';
+import 'package:frist_flutter_app/layout/layout_approach1.dart';
 import 'package:frist_flutter_app/layout/layout_widget_flex.dart';
 import 'package:frist_flutter_app/layout/layout_widget_row_column.dart';
 import 'package:frist_flutter_app/layout/layout_widget_stack.dart';
@@ -649,6 +650,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         MaterialPageRoute(builder: (context) {
                       return TabbedAppBarSample();
                     }));
+                  },
+                ),
+
+                FlatButton(
+                  child: Text("布局方式"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return LayoutApproach1();
+                        }));
                   },
                 ),
               ],
