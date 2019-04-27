@@ -5,6 +5,7 @@ import 'package:frist_flutter_app/basic/basic_widget_button.dart';
 import 'package:frist_flutter_app/basic/basic_widget_image.dart';
 import 'package:frist_flutter_app/basic/basic_widget_input_box_form.dart';
 import 'package:frist_flutter_app/basic/basic_widget_switch_checkbox.dart';
+import 'package:frist_flutter_app/container/container_gallery.dart';
 import 'package:frist_flutter_app/container/container_widget_constrainedbox.dart';
 import 'package:frist_flutter_app/container/container_widget_container.dart';
 import 'package:frist_flutter_app/container/container_widget_decoratedbox.dart';
@@ -132,6 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // Center is a layout widget. It takes a single child and positions it
             // in the middle of the parent.
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               // Column is also layout widget. It takes a list of children and
               // arranges them vertically. By default, it sizes itself to fit its
               // children horizontally, and tries to be as tall as its parent.
@@ -659,6 +661,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                           return LayoutApproach1();
+                        }));
+                  },
+                ),
+
+                FlatButton(
+                  child: Text("Gallery"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return Gallery();
                         }));
                   },
                 ),

@@ -24,6 +24,28 @@ class ImageDemo extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                        child: Image.asset("assets/images/evn_face_photo.jpg")),
+                    Expanded(
+                        child: Image.asset("assets/images/evn_face_photo.jpg")
+                    ,flex: 2,),
+                    Expanded(
+                        child: Image.asset("assets/images/evn_face_photo.jpg")),
+                  ],
+                ),
+
+                Row(
+                  //mainAxisSize: MainAxisSize.max,
+                  children: [
+                    new Icon(Icons.star, color: Colors.green[500]),
+                    new Icon(Icons.star, color: Colors.green[500]),
+                    new Icon(Icons.star, color: Colors.green[500]),
+                    new Icon(Icons.star, color: Colors.black),
+                    new Icon(Icons.star, color: Colors.black),
+                  ],
+                ),
                 Image(
                   image: AssetImage("assets/images/everyday.png"),
                   width: 100,
