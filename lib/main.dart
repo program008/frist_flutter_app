@@ -47,6 +47,9 @@ import 'package:frist_flutter_app/scroll/scroll_widget_listview.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_listview2.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_listview3.dart';
 import 'package:frist_flutter_app/scroll/scroll_widget_single_child_scroll_view.dart';
+import 'package:frist_flutter_app/statemanager/widget_manage_state_mixture.dart';
+import 'package:frist_flutter_app/statemanager/widget_manage_state_oneself.dart';
+import 'package:frist_flutter_app/statemanager/widget_manage_state_parent.dart';
 
 void main() => runApp(MyApp());
 
@@ -671,6 +674,36 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                           return Gallery();
+                        }));
+                  },
+                ),
+
+                FlatButton(
+                  child: Text("widget管理自己的状态"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return ManageStateOnself();
+                        }));
+                  },
+                ),
+
+                FlatButton(
+                  child: Text("父widget管理widget的state"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return ParentWidget();
+                        }));
+                  },
+                ),
+
+                FlatButton(
+                  child: Text("混合管理状态"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return ParentWidget2();
                         }));
                   },
                 ),
